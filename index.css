@@ -1,0 +1,320 @@
+:root{
+    --fondo-menu : rgb(47, 47, 82);
+    --color-menu : rgb(244, 160, 255);
+    --fondo-principal : rgb(132, 173, 203);
+    --fondo-principal-bar : rgb(69, 21, 29);
+    --color-principal-bar : rgb(255, 139, 228);
+    --fondo-elementoSubir : rgb(89, 70, 79);
+    --fondo-inputText : rgb(249, 198, 238);
+    --color-inputText : rgb(90, 18, 63);
+    --fondo-fileSel_label : rgb(42, 106, 255);
+    --color-fileSel_label : rgb(231, 235, 253);
+    --fondo-fileSel_labelHover : rgb(44, 85, 180);
+    --color-fileSel_labelHover : rgb(255, 255, 255);
+    --fondo-fileSel_text : rgb(6, 2, 117);
+    --color-btn-upload : rgb(254, 184, 255);
+    --fondo-btn-upload : rgb(8, 24, 47);
+    --fondo-btn-uploadHover : rgb(14, 23, 37);
+    --fondo-footer : rgb(46, 17, 63);
+    --color-footer : rgb(10, 157, 255);
+    --font-Text : 12px;
+    --font-Text-style : sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+html{
+    box-sizing: border-box;
+}
+.ctn-main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* background-color: var(--test-yellow) */
+}
+.ctn-main .ctn-menu{
+    width: 100%;
+    height: 50px;
+    background-color: var(--fondo-menu);
+    color: var(--color-menu);
+}
+.ctn-main .ctn-elementos{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: var(--fondo-principal);
+}
+.ctn-main .ctn-elementos .c-elemento{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    /* outline: 1px solid var(--test-green); */
+}
+.ctn-main .ctn-elementos .c-elemento .elementsToUpload{
+    width: 100%;
+    height: 100%;
+    /* border: 2px solid var(--test-yellow); */
+}
+.ctn-main .ctn-elementos .c-elemento .elementsToUpload .elementsToUploadBar{
+    width: 100%;
+    height: calc(200px * 25 / 100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 1px solid var(--color-menu);
+    color: var(--color-principal-bar);
+    background-color: var(--fondo-principal-bar); 
+}
+.elementsToUploadBar .ETUB_chkCtn{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
+    box-sizing: border-box;
+    /* outline: 3px solid var(--test-grayLight);  */
+}
+.elementsToUploadBar .ETUB_chkCtn .ETUB_chkCtnLsel{
+    width: 140px;
+    height: 100%;
+    font-size: var(--font-Text);
+    font-family: var(--font-Text-style);
+    text-transform: capitalize;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* border: 3px solid rgb(88, 123, 122);  */
+}
+.elementsToUploadBar .ETUB_chkCtn input[type="checkbox"]{
+    display: none;
+}
+.elementsToUploadBar .ETUB_chkCtn input[type="checkbox"]:not(old) + label {
+    background: no-repeat center/25px url("./icons/checkedFalse.png");
+    cursor: pointer;
+    width: 40px;
+    height: 100%;
+    /* border: 3px solid red; */
+}
+.elementsToUploadBar .ETUB_chkCtn input[type="checkbox"]:not(old):checked + label {
+    background: no-repeat center/25px url("./icons/checkedTrue.png");
+    cursor: pointer;
+    width: 40px;
+    height: 100%;
+}
+.elementsToUploadBar .ETUB_closeE{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 30px;
+    box-sizing: border-box;
+    /* outline: 1px solid rgb(153, 255, 0); */
+}
+.elementsToUploadBar .ETUB_closeE img{
+    width : 21px; 
+    height : 21px;
+    cursor: pointer;
+}
+.elementsToUploadBar .ETUB_closeE img:hover{
+    width : 19px; 
+    height : 19px;
+    cursor: pointer;
+}
+.ctn-main .ctn-elementos .c-elemento .elementsToUpload .elementsToUploadCtd{
+    width: 100%;
+    height: calc(200px * 50 / 100);
+    display: flex;
+    background-color: var(--fondo-elementoSubir);
+    border: 1px solid var(--color-menu);
+}
+.elementsToUploadCtd .ETUC_Chk{
+    width: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* background-color: var(--test-greenLight); */
+}
+.elementsToUploadCtd .ETUC_Chk input[type="checkbox"]{
+    display: none;
+}
+.elementsToUploadCtd .ETUC_Chk input[type="checkbox"]:not(old) + label {
+    background: no-repeat center/25px url("./icons/checkedFalse.png");
+    cursor : pointer;
+    width : 100%;
+    height : 100%;
+}
+.elementsToUploadCtd .ETUC_Chk input[type="checkbox"]:not(old):checked + label {
+    background: no-repeat center/25px url("./icons/checkedTrue.png");
+    cursor : pointer;
+    width : 100%;
+    height : 100%;
+}
+.elementsToUploadCtd .ETUC_Input{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* border: 3px solid var(--test-green); */
+}
+.elementsToUploadCtd .ETUC_Input .ETUC_Input_its{
+    width: 100%;
+    height: calc(100% / 2);
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0px 60px;
+    box-sizing: border-box;
+    /* outline: 1px solid black; */
+}
+.elementsToUploadCtd .ETUC_Input .ETUC_Input_its .ETUC_Input_itsFile,
+.elementsToUploadCtd .ETUC_Input .ETUC_Input_its input{
+    width: 350px;
+    height: 35px;
+    font-size: var(--font-Text);
+    font-family: var(--font-Text-style);
+    text-transform: capitalize;
+    padding: 3px 22px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    color: var(--color-inputText);
+    border: 2px solid var(--color-inputText);
+    background-color: var(--fondo-inputText);
+    /* outline: 1px solid navy; */
+}
+.elementsToUploadCtd .ETUC_Input .ETUC_Input_its input:focus{
+    border: 4px solid var(--color-inputText);
+    outline: none;
+}
+.elementsToUploadCtd .ETUC_Input .ETUC_Input_its img{
+    width: 30px;
+    height: 30px;
+}
+.elementsToUploadCtd .ETUC_Input .ETUC_Input_its .ETUC_Input_itsFile{
+    display: flex;
+    background: none;
+    border: none;
+    padding: 3px 0px;
+}
+.elementsToUploadCtd .ETUC_Input .ETUC_Input_its .ETUC_Input_itsFile label{
+    width: 40%;
+    height: 100%;
+    font-size: var(--font-Text);
+    font-family: var(--font-Text-style);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    cursor: pointer;
+    color: var(--color-fileSel_label);
+    background-color: var(--fondo-fileSel_label);
+}
+.elementsToUploadCtd .ETUC_Input .ETUC_Input_its .ETUC_Input_itsFile label:hover{
+    color: var(--color-fileSel_labelHover);
+    background-color: var(--fondo-fileSel_labelHover);
+}
+.elementsToUploadCtd .ETUC_Input .ETUC_Input_its .ETUC_Input_itsFile div{
+    width: 60%;
+    height: 100%;
+    font-size: var(--font-Text);
+    font-family: var(--font-Text-style);
+    font-weight: normal;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    padding: 0px 8px;
+    box-sizing: border-box;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    user-select: none;
+    cursor: pointer;
+    color: var(--fondo-fileSel_text);
+    background-color: var(--color-fileSel_label);
+}
+.elementsToUploadCtd .ETUC_Input .ETUC_Input_its .ETUC_Input_itsFile input[type="file"]{
+    display: none;
+}
+.ctn-main .ctn-elementos .c-elemento .elementsToUpload .elementsToUploadBtn{
+    width: 100%;
+    height: calc(200px * 25 / 100);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 50px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: var(--fondo-principal-bar);
+}
+.elementsToUploadBtn button{
+    width: 180px;
+    height: 28px;
+    border: none;
+    outline: none;
+    font-size: var(--font-Text);
+    border-radius: 25px;
+    color: var(--color-btn-upload);
+    background-color: var(--fondo-btn-upload);
+}
+.elementsToUploadBtn button:hover{
+    color: var(--color-fileSel_labelHover);
+    background-color: var(--fondo-btn-uploadHover);
+}
+.elementsToUploadBtn button img{
+    width: 12px;
+    height: 10px;
+}
+.elementsToUploadBtn .circle-icono {
+    width: 35px;
+    height: 35px;
+    margin: 0px 0px 0px 15px;
+}
+.elementsToUploadBtn .circle-icono:hover{
+    width: 30px;
+    height: 30px;
+}
+.elementsToUploadBtn .circle-icono img{
+    width: 100%;
+    height: 100%;
+}
+.elementsToUploadCtd .ETUC_Btn{
+    width: 5%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5px 0px;
+    /* background-color: var(--test-orange); */
+}
+.elementsToUploadCtd .ETUC_Btn img{
+    width: 25px;
+    height: 25px;
+}
+.elementsToUploadCtd .ETUC_Btn img:hover{
+    width: 22px;
+    height: 22px;
+    border-radius: 55%;
+    border: 2px solid var(--color-fileSel_labelHover);
+}
+.ctn-main .ctn-footer{
+    width: 100%;
+    height: 250px;
+    height: 200px;
+    background-color: var(--fondo-footer);
+}

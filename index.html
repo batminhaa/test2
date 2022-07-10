@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="ctn-main">
+        <div class="ctn-menu" style="display: flex; justify-content: flex-end; align-items: center; position: fixed;">
+            <ul style="display: flex; justify-content: center; align-items: center; color: aliceblue;">
+                <li style="margin-right: 30px;">Home</li>
+                <li style="margin-right: 30px;">Help</li>
+                <li style="margin-right: 30px;">About</li>
+                <li style="margin-right: 30px;">Sign In</li>
+                <li style="margin-right: 30px;">Sign Up</li>
+            </ul>
+        </div>
+        <div class="ctn-elementos" style="margin-top: 50px;">
+            <div class="c-elemento">
+                <div class="elementsToUpload" id="ETU-container">
+
+                    <div class="elementsToUploadBar">
+                        <div class="ETUB_chkCtn">
+                            <label class="ETUB_chkCtnLsel" for="selTodosElementos">
+                                seleccionar elementos
+                            </label>
+                            <input type="checkbox" id="selTodosElementos">
+                            <label class="ETUB_chkCtnIconChk" for="selTodosElementos"></label>
+                        </div>
+                        <div class="ETUB_closeE">
+                            <img id="downArrowHidenImg" src="./icons/DownArrow.png" alt="arrow hiden">
+                        </div>
+                    </div>
+
+                    <div class="elementsToUploadCtd" id="elementsUploadCtd_0">
+                        <div class="ETUC_Chk">
+                            <input type="checkbox" id="selElement_0">
+                            <label for="selElement_0"></label>
+                        </div>
+                        <div class="ETUC_Input">
+                            <div class="ETUC_Input_its">
+                                <input id="fSpa_0" placeholder="Palabra en ingles" type="text">
+                                <input id="fEng_0" placeholder="Palabra en español" type="text">
+                            </div>
+                            <div class="ETUC_Input_its">
+                                <div class="ETUC_Input_itsFile">
+                                    <label for="cargarImg_0">seleccionar imagen</label>
+                                    <div id="fselectTImg_0">archivo seleccionado</div>
+                                    <input type="file" accept="image/*" id="cargarImg_0">
+                                </div>
+                                <div class="ETUC_Input_itsFile">
+                                    <label for="cargarAudio_0">seleccionar audio</label>
+                                    <div id="fselectTAud_0">archivo seleccionado</div>
+                                    <input type="file" accept="audio/*" id="cargarAudio_0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ETUC_Btn" id="deleteElement_0">
+                            <img src="./icons/EXIT.svg" alt="exit">
+                        </div>
+                    </div>
+
+                    <div class="elementsToUploadBtn" id="ETUB-barDown" >
+                        <button id="ETUBT_BTN" onclick="subirElementosBD()"> subir elementos
+                            <img id="ETUBT_BTN-icon" src="./icons/upload.png">
+                        </button>
+                        <button class="circle-icono" id="addELements" onclick="addElementoDiv()">
+                            <img src="./icons/addElement.png" id="addELements-icon">
+                        </button>
+                        <button class="circle-icono" id="removeElements" onclick="clearAllInputs()">
+                            <img src="./icons/DeleteElement.png" id="removeElements-icon">
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="c-elemento">
+                <div class="sb-elemento">
+                    <!--  -->
+                    <div class="elementsToUpload"></div>
+                    <!--  -->
+                </div>
+            </div>
+        </div>
+        <div class="ctn-footer"></div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
